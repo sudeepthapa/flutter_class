@@ -15,10 +15,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(40),
         color: Colors.white,
-        child: Center(
-          
+        child: Text(
+          "Hello World",
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.black,
+            fontWeight: FontWeight.normal,
+            decoration: TextDecoration.none
+          ),
         ),
       ),
     );
