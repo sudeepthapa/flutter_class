@@ -14,21 +14,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        decoration: BoxDecoration(
-          color: Colors.green
+      home: Scaffold(
+        body: Container(
+          
         ),
-        child: Text(
-          "Hello World",
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-            decoration: TextDecoration.none
-          ),
-        ),
-      ),
+      )
     );
   }
 }
