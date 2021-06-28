@@ -37,17 +37,56 @@ class MyApp extends StatelessWidget {
             ],
             // centerTitle: true,
           ),
-          body: Center(
-            child: Container(
-              child: Text("Hello world !"),
+          body: Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text("Learning Flutter"),
+                  subtitle: Text("Learning flutter is easy sfda fdasf fdsadfa fdasfda."),
+                  leading: CircleAvatar(
+                    child: Icon(Icons.person)
+                  ),
+                  trailing: Text("JAN 20"),
+                  onTap: (){},
+                ),
+                Divider(),
+                ListTile(
+                  title: Text("Learning Flutter"),
+                  subtitle: Text("Learning flutter is easy sfda fdasf fdsadfa fdasfda."),
+                  leading: CircleAvatar(
+                    child: Icon(Icons.person)
+                  ),
+                  trailing: Text("JAN 20"),
+                  onTap: (){},
+                ),
+                Divider(),
+                ListTile(
+                  title: Text("Learning Flutter"),
+                  subtitle: Text("Learning flutter is easy sfda fdasf fdsadfa fdasfda."),
+                  leading: CircleAvatar(
+                    child: Icon(Icons.person)
+                  ),
+                  trailing: Text("JAN 20"),
+                  onTap: (){},
+                ),
+                Divider(),
+              ]
             ),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: null,
-            child: Icon(Icons.add),
+            child: Icon(Icons.remove),
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.miniEndFloat,
+          bottomNavigationBar: BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+              BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
+            ],
+          ),
           drawer: Drawer(
             child: SafeArea(
               child: Column(children: [
