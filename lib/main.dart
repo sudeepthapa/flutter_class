@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_class/screens/HomeScreen.dart';
+import 'package:flutter_class/constants/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,10 +12,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      initialRoute: Routes.home,
+      routes: Routes.getRoutes(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_class/screens/ContactScreen.dart';
+import 'package:flutter_class/constants/routes.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,36 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               child: Text("GO TO CONTACT"),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ContactScreen()));
+                Navigator.pushNamed(context, Routes.contact);
               },
             )
           ]
+        ),
+      ),
+      drawer: Drawer(
+        child: SafeArea(
+          child: Column(
+            children: [
+              ListTile(
+                title: Text('Home'),
+                leading: Icon(Icons.home),
+                onTap: (){
+                  Navigator.pushNamed(context, Routes.home);
+                },
+              ),
+              ListTile(
+                title: Text('Contact'),
+                leading: Icon(Icons.home),
+                onTap: (){
+                  Navigator.pushNamed(context, Routes.contact);
+                },
+              ),
+              ListTile(
+                title: Text('Services'),
+                leading: Icon(Icons.home)
+              ),
+            ]
+          ),
         ),
       ),
     );
