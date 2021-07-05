@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 class ContactScreen extends StatelessWidget {
+  final Map<String, dynamic>? arguments;
+
+  ContactScreen({required this.arguments});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact'),
+        title: Text(arguments!['title']),
       ),
       body: Container(
         width: double.infinity,

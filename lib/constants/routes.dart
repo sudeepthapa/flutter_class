@@ -11,7 +11,7 @@ class Routes {
   static getRoutes(){
     return {
       Routes.home: (context)=> HomePage(),
-      Routes.contact: (context) => ContactScreen()
+      // Routes.contact: (context) => ContactScreen()
     };
   }
 }
