@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_class/constants/validators.dart';
 
 class TodosScreen extends StatefulWidget {
   @override
@@ -55,19 +56,14 @@ class _TodosScreenState extends State<TodosScreen> {
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             TextFormField(
               controller: _titleController,
-              validator: (text) {
-                if (text == null || text.isEmpty) {
-                  return 'Please insert something.';
-                } else {
-                  return null;
-                }
-              },
+              validator: (text) => Validators.validateText(text),
               decoration: InputDecoration(
                   hintText: 'Note Title', border: OutlineInputBorder()),
             ),
             SizedBox(height: 8),
             TextFormField(
               controller: _descriptionController,
+              validator: (text) => Validators.validateText(text),
               maxLines: 3,
               decoration: InputDecoration(
                   hintText: 'Note Description', border: OutlineInputBorder()),
