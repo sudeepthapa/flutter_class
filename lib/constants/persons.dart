@@ -1,4 +1,6 @@
-List<Map<String, dynamic>> persons = [
+import 'package:flutter_class/models/Person.dart';
+
+List<Map<String, dynamic>> persons1 = [
   {
     'name': 'Alex',
     'age': 22,
@@ -47,4 +49,43 @@ List<Map<String, dynamic>> persons = [
     'occupation': 'Doctor',
     'gender': 'Male'
   },
+];
+
+List<Person> persons = [
+  Person(
+    name: 'Sudip',
+    age: 88,
+    gender: 'Male',
+    occupation: 'Engineer'
+  ),
+  Person(
+    name: 'Alex',
+    age: 88,
+    gender: 'Male',
+    occupation: 'Engineer'
+  ),
+  Person(
+    name: 'ABCD',
+    age: 88,
+    gender: 'Male',
+    occupation: 'Engineer'
+  ),
+  Person(
+    name: 'Gmail',
+    age: 88,
+    gender: 'Male',
+    occupation: 'Engineer'
+  ),
+  Person(
+    name: 'Test',
+    age: 88,
+    gender: 'Male',
+    occupation: 'Engineer'
+  ),
+  Person(
+    name: 'Hello',
+    age: 88,
+    gender: 'Male',
+    occupation: 'Engineer'
+  ),
 ];

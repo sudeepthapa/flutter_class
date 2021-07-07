@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_class/constants/persons.dart';
+import 'package:flutter_class/models/Person.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
               child: ListView.builder(
                 itemCount: persons.length,
                 itemBuilder: (BuildContext context, int index) {
-                  var person = persons[index];
+                  Person person = persons[index];
                   return getListItem(person);
                 },
               ),
@@ -43,15 +44,15 @@ class MyApp extends StatelessWidget {
   }
 
   List<Widget> prepareListItems() {
-    return persons.map((person) => getListItem(person)).toList();
+    return persons.map((Person person) => getListItem(person)).toList();
   }
 
-  Widget getListItem(person) {
+  Widget getListItem(Person person) {
     return ListTile(
-      title: Text(person['name']),
-      subtitle: Text(person['occupation']),
-      leading: CircleAvatar(child: Text(person['age'].toString())),
-      trailing: Text(person['gender']),
+      title: Text(person.name!),
+      subtitle: Text(person.occupation!),
+      leading: CircleAvatar(child: Text(person.age!.toString())),
+      trailing: Text(person.gender!),
     );
   }
 
