@@ -9,34 +9,37 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('List Demo'),
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('List Demo'),
-          ),
-          body: Column(
-            children: [
-              Container(
-                height: 100,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    ...getHorizantalListItems()
-                  ],
-                ),
+        body: Column(
+          children: [
+            Container(
+              height: 100,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [...getHorizantalListItems()],
               ),
-              Expanded(child: ListView(
-                children: [
-                  ...prepareListItems()
-                ]
-              ))
-            ],
-          ),
-        ));
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: persons.length,
+                itemBuilder: (BuildContext context, int index) {
+                  var person = persons[index];
+                  return getListItem(person);
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   List<Widget> prepareListItems() {
