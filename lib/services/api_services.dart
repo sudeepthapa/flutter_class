@@ -15,7 +15,4 @@ class ApiService {
       print(e);
     }
   }
-
-
-
 }
