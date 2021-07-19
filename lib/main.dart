@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_class/providers/phone_provider.dart';
+import 'package:flutter_class/screens/HomeScreen.dart';
+import 'package:flutter_class/screens/ModifyScreen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => PhoneModel(),
+        )
+      ],
+      child: MyApp()
+    )
+  );
 }
 
 
@@ -11,23 +24,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (_) => HomeScreen(),
+        '/add': (_) => ModifyScreen() 
+      },
       theme: ThemeData(
+        brightness: Brightness.light,
         primarySwatch: Colors.blue,
-      ),
-      home: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-        decoration: BoxDecoration(
-          color: Colors.green
-        ),
-        child: Text(
-          "Hello World",
-          style: TextStyle(
-            fontSize: 18,
-            color: Colors.black,
-            fontWeight: FontWeight.normal,
-            decoration: TextDecoration.none
-          ),
-        ),
       ),
     );
   }
